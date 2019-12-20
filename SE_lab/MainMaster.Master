@@ -1,0 +1,115 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainMaster.master.cs" Inherits="SE_lab.MainMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Final Year Project Assignment Page</title>
+     <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="css/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <!--Our Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/w3.css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            
+             <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header" style="height:60px;">
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="HomePage.aspx">
+                        <i class="glyphicon glyphicon-home"></i>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#CompanySubmenu" data-toggle="collapse" aria-expanded="false">
+                        <i class="glyphicon glyphicon-briefcase"></i>
+                        Add A Member
+                    </a>
+                    <ul class="collapse list-unstyled" id="CompanySubmenu">
+                        <li><a href="add_Student.aspx">Student</a></li>
+                        <li><a href="add_Advisor.aspx">Advisor</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#customerSubmenu" data-toggle="collapse" aria-expanded="false">
+                        <i class="glyphicon glyphicon-user"></i>
+                        Group
+                    </a>
+                    <ul class="collapse list-unstyled" id="customerSubmenu">
+                        <li><a href="add_group.aspx">Group Formation</a></li>
+                        <li><a href="ViewAllGroups.aspx">View All Group </a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
+                        <i class="glyphicon glyphicon-duplicate"></i>
+                        Project
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li><a href="add_Project.aspx">Add Project</a></li>
+                        <li><a href="Assign_Project.aspx">Assign Project</a></li>
+                        <li><a href="ViewAllProjectData.aspx">View All Data</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="Evalution.aspx">
+                        <i class="glyphicon glyphicon-send"></i>
+                        Evaution
+                    </a>
+                </li>
+                <li>
+                    <a href="Report.aspx">
+                        <i class="glyphicon glyphicon-send"></i>
+                        Reports
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- Page Content Holder -->
+        <div id="content">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header" style="width: 250px;">
+                        <div style="float: left; width: 84%">
+                            <h3>
+                                <a href="HomePage.aspx">
+                                    <img src="images/uetmainlogo2018.jpg"  width="40" style="padding: 0 5px 0 5px;" />UET Lahore
+                                </a>
+                            </h3>
+                        </div>
+                        <div style="float: right; width: 15%; padding-top: 0px;">
+                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                                <i class="glyphicon glyphicon-align-left"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div style="margin: 100px 10px 10px 20px;">
+            </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+    <!-- jQuery CDN -->
+    <script src="js/jquery-1.12.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+        </div>
+    </form>
+</body>
+</html>
